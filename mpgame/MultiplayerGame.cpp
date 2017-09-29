@@ -3736,7 +3736,7 @@ void idMultiplayerGame::SetupBuyMenuItems()
 	buyMenu->SetStateInt( "buyStatus_rocketlauncher", player->ItemBuyStatus( "weapon_rocketlauncher" ) );
 	buyMenu->SetStateInt( "buyStatus_railgun", player->ItemBuyStatus( "weapon_railgun" ) );
 	buyMenu->SetStateInt( "buyStatus_lightninggun", player->ItemBuyStatus( "weapon_lightninggun" ) );
-	//	buyMenu->SetStateInt( "buyStatus_dmg", player->ItemBuyStatus( "weapon_dmg" ) );
+	buyMenu->SetStateInt( "buyStatus_dmg", player->ItemBuyStatus( "weapon_dmg" ) );
 	buyMenu->SetStateInt( "buyStatus_napalmgun", player->ItemBuyStatus( "weapon_napalmgun" ) );
 
 	buyMenu->SetStateInt( "buyStatus_lightarmor", player->ItemBuyStatus( "item_armor_small" ) );

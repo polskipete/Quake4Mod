@@ -144,9 +144,12 @@ stateResult_t rvWeaponGrenadeLauncher::State_Fire ( const stateParms_t& parms ) 
 	};	
 	switch ( parms.stage ) {
 		case STAGE_INIT:
-			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
-			Attack ( false, 1, spread, 0, 1.0f );
-			PlayAnim ( ANIMCHANNEL_ALL, GetFireAnim(), 0 );	
+			//"firerate", "spread" Changed      \/ fireratePK
+			nextAttackTime = gameLocal.time + (1000 * owner->PowerUpModifier ( PMOD_FIRERATE ));
+			//Spread below     \/PK
+			Attack ( false, 1, 20, 0, 1.0f );
+			SetPlayRate(10);
+			PlayAnim ( ANIMCHANNEL_ALL, GetFireAnim(), 1 );	
 			return SRESULT_STAGE ( STAGE_WAIT );
 	
 		case STAGE_WAIT:		
@@ -187,7 +190,8 @@ stateResult_t rvWeaponGrenadeLauncher::State_Reload ( const stateParms_t& parms 
 			
 		case STAGE_WAIT:
 			if ( AnimDone ( ANIMCHANNEL_ALL, 4 ) ) {
-				AddToClip ( ClipSize() );
+				// clip size changed PK
+				AddToClip ( 500 );
 				SetState ( "Idle", 4 );
 				return SRESULT_DONE;
 			}

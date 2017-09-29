@@ -3055,6 +3055,13 @@ void rvWeapon::NetCatchup( void ) {
 	ExecuteState ( "NetCatchup" );
 }
    
+
+void rvWeapon::SetPlayRate(float _rate)
+{
+	viewAnimator->SetPlaybackRate(_rate);
+	worldAnimator->SetPlaybackRate(_rate);
+
+}
 /*
 ===============
 rvWeapon::PlayAnim
