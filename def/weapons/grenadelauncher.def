@@ -81,7 +81,7 @@ entityDef weapon_grenadelauncher
 	"dirOffset"					"0 0 .2"
 	
 	"inv_weapon"				"weapon_grenadelauncher"
-	"inv_start_ammo_grenadelauncher"	"10"
+	"inv_start_ammo_grenadelauncher"	"100"
 	"inv_item"					"1"
 	"inv_icon"					"gfx/guis/hud/icons/item_grenade.tga"
 	"inv_name"					"#str_107403"	
@@ -182,7 +182,7 @@ entityDef moveable_item_grenadelauncher
 model weapon_grenadelauncher_view
 {
 	mesh						models/weapons/grenadelauncher/mesh.md5mesh
-//	skin						skins/weapons/strogg_rocket_launcher/nobounce
+	skin						skins/weapons/strogg_rocket_launcher/nobounce
 
 	anim idle 					models/weapons/grenadelauncher/idle.md5anim	
 	anim idle_empty				models/weapons/grenadelauncher/idle_empty.md5anim	
@@ -244,20 +244,20 @@ entityDef projectile_grenade
 	"def_damage"				"damage_grenadeDirect"
 	"def_splash_damage"			"damage_grenadeSplash"
 																											
-	"speed"						"700"
+	"speed"						"1700"
 	"angular_velocity"			"-10 5 1"
 	"settle_duration"			"0.08"
 	
 	"linear_friction"			"0"
 	"angular_friction"			"0"
 	"contact_friction"			"10"
-	"bounce"					".65"
-	"gravity"					"1"
+	"bounce"					"0"
+	"gravity"					"0"
 	"fuse"						"2.5"
 								
 	"detonate_on_fuse"			"1"
 	"detonate_on_death"			"0"
-	"detonate_on_world"			"0"
+	"detonate_on_world"			"1"
 	"detonate_on_actor"			"1"
 	"detonateTestGroundMaterial"	"1"
 								
@@ -280,7 +280,7 @@ entityDef projectile_grenade
 	"fx_impact_rock_mp"			"effects/weapons/rocketlauncher/impact_mp.fx"
 	"fx_impact_water"			"effects/ambient/splash_med.fx"
 
-	"friendly_impact"			"1"
+	"friendly_impact"			"0"
 
 	"snd_ricochet"				"grenade_bounce"	
 
@@ -335,6 +335,6 @@ entityDef damage_grenadeSplash
 entityDef damage_grenadeSplash_mp
 {
 	"inherit"					"damage_grenadeSplash"
-	"damage"					"100"
-	"radius"					"150"
+	"damage"					"20"
+	"radius"					"5"
 }

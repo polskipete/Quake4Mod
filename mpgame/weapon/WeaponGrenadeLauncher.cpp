@@ -145,9 +145,10 @@ stateResult_t rvWeaponGrenadeLauncher::State_Fire ( const stateParms_t& parms ) 
 	switch ( parms.stage ) {
 		case STAGE_INIT:
 			//"firerate", "spread" Changed      \/ fireratePK
-			nextAttackTime = gameLocal.time + (1000 * owner->PowerUpModifier ( PMOD_FIRERATE ));
+			nextAttackTime = gameLocal.time + (2000 * owner->PowerUpModifier ( PMOD_FIRERATE ));
 			//Spread below     \/PK
-			Attack ( false, 1, 20, 0, 1.0f );
+			Attack ( false, 1, 40, 0, 1.0f );
+			//Increased Animation for faster shooting PK
 			SetPlayRate(10);
 			PlayAnim ( ANIMCHANNEL_ALL, GetFireAnim(), 1 );	
 			return SRESULT_STAGE ( STAGE_WAIT );
