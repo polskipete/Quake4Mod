@@ -3486,7 +3486,7 @@ void idMultiplayerGame::SetupBuyMenuItems()
 	if ( !player ) 
 		return;
 
-	buyMenu->SetStateInt( "buyStatus_shotgun", player->ItemBuyStatus( "weapon_shotgun" ) );
+	buyMenu->SetStateInt( "buyStatus_shotgun", player->ItemBuyStatus( "weapon_shotgun"));
 	buyMenu->SetStateInt( "buyStatus_hyperblaster", player->ItemBuyStatus( "weapon_hyperblaster" ) );
 	buyMenu->SetStateInt( "buyStatus_grenadelauncher", player->ItemBuyStatus( "weapon_grenadelauncher" ) );
 	buyMenu->SetStateInt( "buyStatus_nailgun", player->ItemBuyStatus( "weapon_nailgun" ) );

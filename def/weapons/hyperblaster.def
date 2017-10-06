@@ -89,10 +89,10 @@ entityDef weapon_hyperblaster
 
 	"weaponname"				"HyperBlaster"
 	"ammoType"					"ammo_hyperblaster"
-	"inv_start_ammo_hyperblaster"		"60"
+	"inv_start_ammo_hyperblaster"		"1"
 	"ammoRegenStep"				"5"
 	"ammoRegenTime"				"1500"
-	"clipSize"					"60"									// large for smooth regen
+	"clipSize"					"2"									// large for smooth regen
 	"ammoRequired"				"1"										// ammo is handled in the script file
 	"gui"						"guis/weapons/hyperblaster_ammo.gui"
 	"mtr_icon"					"gfx/guis/hud/icons/gun_hyperblaster"
@@ -148,7 +148,7 @@ entityDef weapon_hyperblaster
 entityDef weapon_hyperblaster_mp
 {
 	"inherit"				"weapon_hyperblaster"
-	"clipsize"				"0"
+	"clipsize"				"1"
 	"editor_ignore"				"1"
 	"inv_icon"				"gfx/guis/hud/icons/item_hyperblaster_colored"
 	"mtr_simple_icon"				"simpleicons/item_hyperblaster_colored"
@@ -250,7 +250,7 @@ entityDef weaponmod_hyperblaster_bounce1
 	"spawnclass"				"idItem"
 	"size"						"32 32 32"
 	"inv_weaponmod"				"wpmod_hyperblaster_bounce1"
-	"inv_ammo_hyperblaster"		"40"
+	"inv_ammo_hyperblaster"		"2"
 	"inv_item"					"1"
 	"inv_icon"					"gfx/guis/hud/icons/item_hyperblaster.tga"
 	"inv_name"					"#str_107432"
@@ -281,7 +281,7 @@ entityDef damage_hyperblaster
 entityDef damage_hyperblaster_mp
 {
 	"inherit"				"damage_hyperblaster"
-	"knockback"				"14"
+	"knockback"				"1400"
 }
 
 entityDef damage_hyperblaster_splash
@@ -300,7 +300,7 @@ entityDef damage_hyperblaster_splash
 entityDef damage_hyperblaster_splash_mp
 {
 	"inherit"				"damage_hyperblaster_splash"
-	"knockback" 				"10"
+	"knockback" 				"1400" 
 }
 
 entityDef projectile_hyperblaster

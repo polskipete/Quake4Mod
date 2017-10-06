@@ -150,7 +150,9 @@ stateResult_t rvWeaponGrenadeLauncher::State_Fire ( const stateParms_t& parms ) 
 			Attack ( false, 1, 40, 0, 1.0f );
 			//Increased Animation for faster shooting PK
 			SetPlayRate(10);
+			
 			PlayAnim ( ANIMCHANNEL_ALL, GetFireAnim(), 1 );	
+			SetPlayRate(1);
 			return SRESULT_STAGE ( STAGE_WAIT );
 	
 		case STAGE_WAIT:		

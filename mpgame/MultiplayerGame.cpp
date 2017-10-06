@@ -3729,7 +3729,7 @@ void idMultiplayerGame::SetupBuyMenuItems()
 	if ( !player ) 
 		return;
 
-	buyMenu->SetStateInt( "buyStatus_shotgun", player->ItemBuyStatus( "weapon_shotgun" ) );
+	buyMenu->SetStateInt( "buyStatus_shotgun", player->ItemBuyStatus( "weapon_shotgun" ) ) ;
 	buyMenu->SetStateInt( "buyStatus_hyperblaster", player->ItemBuyStatus( "weapon_hyperblaster" ) );
 	buyMenu->SetStateInt( "buyStatus_grenadelauncher", player->ItemBuyStatus( "weapon_grenadelauncher" ) );
 	buyMenu->SetStateInt( "buyStatus_nailgun", player->ItemBuyStatus( "weapon_nailgun" ) );
@@ -3973,7 +3973,7 @@ idUserInterface* idMultiplayerGame::StartMenu( void ) {
 			buyMenu->SetStateInt( "price_rocketlauncher", player->GetItemCost( "weapon_rocketlauncher" ) );
 			buyMenu->SetStateInt( "price_railgun", player->GetItemCost( "weapon_railgun" ) );
 			buyMenu->SetStateInt( "price_lightninggun", player->GetItemCost( "weapon_lightninggun" ) );
-			//			buyMenu->SetStateInt( "price_dmg", player->GetItemCost( "weapon_dmg" ) );
+					buyMenu->SetStateInt( "price_dmg", player->GetItemCost( "weapon_dmg" ) );
 			buyMenu->SetStateInt( "price_napalmgun", player->GetItemCost( "weapon_napalmgun" ) );
 
 			buyMenu->SetStateInt( "price_lightarmor", player->GetItemCost( "item_armor_small" ) );

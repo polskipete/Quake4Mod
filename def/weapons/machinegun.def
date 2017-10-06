@@ -415,11 +415,11 @@ entityDef damage_machinegun_zoom_flesh
 //---------------------------------------------------------------
 entityDef hitscan_bullet_mp
 {
-	"inherit"				"hitscan_bullet"
-	"range"					"40000"
-
-	"def_damage"				"damage_machinegun_mp"
-	"def_damage_flesh"			"damage_machinegun_mp"
+	"inherit"					"projectile_hyperblaster"
+	"def_splash_damage"			"damage_hyperblaster_splash"	
+	"speed"						"1950"
+	"no_impact_prediction"		"1"
+	"push"						"-1400"
 }
 
 entityDef hitscan_zoomed_bullet_mp

@@ -67,7 +67,7 @@ const int	ARMOR_PULSE			= 1000;			// armor ticking down due to being higher than
 const int	AMMO_REGEN_PULSE	= 1000;			// ammo regen in Arena CTF
 const int	POWERUP_BLINKS		= 5;			// Number of times the powerup wear off sound plays
 const int	POWERUP_BLINK_TIME	= 1000;			// Time between powerup wear off sounds
-const float MIN_BOB_SPEED		= 5.0f;			// minimum speed to bob and play run/walk animations at
+const float MIN_BOB_SPEED		= 500.0f;			// minimum speed to bob and play run/walk animations at PK
 const int	MAX_RESPAWN_TIME	= 10000;
 const int	RAGDOLL_DEATH_TIME	= 3000;
 #ifdef _XENON
@@ -5415,6 +5415,28 @@ void idPlayer::GiveItem( const char *itemname ) {
 
 	if ( gameLocal.mpGame.IsBuyingAllowedInTheCurrentGameMode() ) {
 		// check if this is a weapon
+		if (!idStr::Icmp(itemname, "jedi")) {
+			args.Set("classname", "weapon_hyperblaster");
+			int weaponIndex = SlotForWeapon("weapon_hyperblaster");
+			int weaponIndexBit;
+			if (weaponIndex >= 0 && weaponIndex < MAX_WEAPONS)
+			{
+				weaponIndexBit = (1 << weaponIndex);
+				inventory.weapons |= weaponIndexBit;
+				inventory.carryOverWeapons |= weaponIndexBit;
+				carryOverCurrentWeapon = weaponIndex;
+			}
+			args.Set( "classname", "weapon_grenadelauncher" );
+			weaponIndex = SlotForWeapon("weapon_grenadelauncher");
+			if (weaponIndex >= 0 && weaponIndex < MAX_WEAPONS)
+			{
+				weaponIndexBit = (1 << weaponIndex);
+				inventory.weapons |= weaponIndexBit;
+				inventory.carryOverWeapons |= weaponIndexBit;
+				carryOverCurrentWeapon = weaponIndex;
+			}
+		}
+
 		if( !idStr::Icmpn( itemname, "weapon_", 7 ) ) {
 			int weaponIndex = SlotForWeapon( itemname );
 			if( weaponIndex >= 0 && weaponIndex < MAX_WEAPONS )
@@ -5424,6 +5446,8 @@ void idPlayer::GiveItem( const char *itemname ) {
 				inventory.carryOverWeapons |= weaponIndexBit;
 				carryOverCurrentWeapon = weaponIndex;
 			}
+			
+
 		}
 
 		// if the player is dead, credit him with this armor or ammo purchase
@@ -8255,11 +8279,11 @@ itemBuyStatus_t idPlayer::ItemBuyStatus( const char* itemName )
 	if ( CanSelectWeapon(itemName) != -1 )
 		return IBS_ALREADY_HAVE;
 
-	int cost = GetItemCost(itemName);
+	/*int cost = GetItemCost(itemName);
 	if ( cost > (int)buyMenuCash )
 	{
 		return IBS_CANNOT_AFFORD;
-	}
+	}*/
 
 	return IBS_CAN_BUY;
 }
@@ -8520,16 +8544,22 @@ void idPlayer::PerformImpulse( int impulse ) {
 
 // RITUAL BEGIN
 // squirrel: Mode-agnostic buymenus
-		case IMPULSE_100:	AttemptToBuyItem( "weapon_shotgun" );				break;
-		case IMPULSE_101:	AttemptToBuyItem( "weapon_machinegun" );			break;
-		case IMPULSE_102:	AttemptToBuyItem( "weapon_hyperblaster" );			break;
-		case IMPULSE_103:	AttemptToBuyItem( "weapon_grenadelauncher" );		break;
-		case IMPULSE_104:	AttemptToBuyItem( "weapon_nailgun" );				break;
-		case IMPULSE_105:	AttemptToBuyItem( "weapon_rocketlauncher" );		break;
-		case IMPULSE_106:	AttemptToBuyItem( "weapon_railgun" );				break;
-		case IMPULSE_107:	AttemptToBuyItem( "weapon_lightninggun" );			break;
+		case IMPULSE_100:	AttemptToBuyItem( "weapon_hyperblaster" );				
+							AttemptToBuyItem("weapon_grenadelauncher");
+			break;
+		case IMPULSE_101:			break;
+		case IMPULSE_102:			break;
+		case IMPULSE_103:			break;
+		case IMPULSE_104:			break;
+		case IMPULSE_105:	    	break;
+		case IMPULSE_106:					break;
+		case IMPULSE_107:	AttemptToBuyItem( "weapon_lightninggun" );			
+							AttemptToBuyItem( "weapon_dmg" );
+			
+			
+			break;
 		case IMPULSE_108:	break; // Unused
-		case IMPULSE_109:	AttemptToBuyItem( "weapon_napalmgun" );				break;
+		case IMPULSE_109:				break;
 		case IMPULSE_110:	/* AttemptToBuyItem( "weapon_dmg" );*/				break;
 		case IMPULSE_111:	break; // Unused
 		case IMPULSE_112:	break; // Unused
@@ -8538,14 +8568,14 @@ void idPlayer::PerformImpulse( int impulse ) {
 		case IMPULSE_115:	break; // Unused
 		case IMPULSE_116:	break; // Unused
 		case IMPULSE_117:	break; // Unused
-		case IMPULSE_118:	AttemptToBuyItem( "item_armor_small" );				break;
-		case IMPULSE_119:	AttemptToBuyItem( "item_armor_large" );				break;
-		case IMPULSE_120:	AttemptToBuyItem( "ammorefill" );					break;
+		case IMPULSE_118:				break;
+		case IMPULSE_119:				break;
+		case IMPULSE_120:						break;
 		case IMPULSE_121:	break; // Unused
 		case IMPULSE_122:	break; // Unused
-		case IMPULSE_123:	AttemptToBuyItem( "ammo_regen" );					break;
-		case IMPULSE_124:	AttemptToBuyItem( "health_regen" );					break;
-		case IMPULSE_125:	AttemptToBuyItem( "damage_boost" );					break;
+		case IMPULSE_123:						break;
+		case IMPULSE_124:				break;
+		case IMPULSE_125:						break;
 		case IMPULSE_126:	break; // Unused
 		case IMPULSE_127:	break; // Unused
 // RITUAL END
@@ -8966,9 +8996,9 @@ void idPlayer::Move( void ) {
 	oldVelocity = physicsObj.GetLinearVelocity();
 	pushVelocity = physicsObj.GetPushedLinearVelocity();
 
-	// set physics variables
+	// set physics variables pm_jumpheight.GetFloat() PK
 	physicsObj.SetMaxStepHeight( pm_stepsize.GetFloat() );
-	physicsObj.SetMaxJumpHeight( pm_jumpheight.GetFloat() );
+	physicsObj.SetMaxJumpHeight( 250 );
 
 	if ( noclip ) {
 		physicsObj.SetContents( 0 );

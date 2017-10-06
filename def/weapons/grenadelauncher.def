@@ -335,6 +335,6 @@ entityDef damage_grenadeSplash
 entityDef damage_grenadeSplash_mp
 {
 	"inherit"					"damage_grenadeSplash"
-	"damage"					"20"
+	"damage"					"5"
 	"radius"					"5"
 }

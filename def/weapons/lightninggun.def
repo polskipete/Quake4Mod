@@ -56,7 +56,7 @@ entityDef weapon_lightninggun
 	"spawnclass"				"idItem"
 	"weaponclass"				"rvWeaponLightningGun"
 	"size"						"32 32 32"
-	//Removed Models HERE:
+	
 
 	"chainLightningRange"		"0 0"
 
@@ -312,7 +312,7 @@ entityDef damage_lightninggun_mp
 {
 	"inherit"					"damage_lightninggun"
 	"damage"					"7"
-	"knockback"					"11"
+	"knockback"					"1000"
 }
 
 
