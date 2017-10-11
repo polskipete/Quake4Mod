@@ -87,7 +87,7 @@ entityDef weapon_machinegun
 	"joint_world_flash"			"muzzle_flash"
 
 	"inv_weapon"				"weapon_machinegun"
-	"inv_start_ammo_machinegun"		"40"
+	"inv_start_ammo_machinegun"		"0"
 	"inv_item"					"1"
 	"inv_icon"					"gfx/guis/hud/icons/item_machinegun.tga"
 	"inv_name"					"#str_107406"
@@ -100,9 +100,9 @@ entityDef weapon_machinegun
 	"def_althitscan"			"hitscan_zoomed_bullet"
 	
 	"ammoType"					"ammo_machinegun"
-	"ammoRequired"				"1"
-	"clipSize"					"40"
-	"lowAmmo"					"10"
+	"ammoRequired"				"500"
+	"clipSize"					"0"
+	"lowAmmo"					"0"
 	"gui"						"guis/weapons/machinegun_ammo.gui"
 	"gui2"						"guis/weapons/machinegun_inview_scope.gui"
 
@@ -214,7 +214,7 @@ entityDef weapon_machinegun_mp
 	"respawn_Team DM"			"30"
 	"respawn_Tourney"			"15"
 	
-	"inv_start_ammo_machinegun"		"100"
+	"inv_start_ammo_machinegun"		"0"
 	
 	// played when you touch a weapon you can't acquire, i.e. weaponStay in MP
 	"snd_noAcquire"			"pickup_weaponstay"	
@@ -222,7 +222,7 @@ entityDef weapon_machinegun_mp
 
 entityDef weapon_blaster_gui
 {
-	"model"						"weapon_machinegun_world"
+	"model"						""
 	"hidesurface"				"models/weapons/blaster/flare"
 	
 }

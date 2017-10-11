@@ -75,9 +75,9 @@ entityDef weapon_rocketlauncher
 	"inv_icon"					"gfx/guis/hud/icons/item_rocket.tga"
 	"inv_name"					"#str_107409"	
 
-	"fireRate"					".8"
-	"reloadRate"				".8"
-	"spread"					"0"
+	"fireRate"					".08"
+	"reloadRate"				".08"
+	"spread"					"100"
 
 	"ammoRegenStep"				"1"
 	"ammoRegenTime"				"1750"
@@ -287,7 +287,7 @@ entityDef weaponmod_rocketlauncher_burst
 	"spawnclass"				"idItem"
 	"size"						"32 32 32"
 	"inv_weaponmod"				"wpmod_rocketlauncher_burst"
-	"inv_ammo_rocketlauncher"	"10"
+	"inv_ammo_rocketlauncher"	"100"
 	"inv_item"					"1"
 	"model"						"models/items/ammo/ammo_box.lwo"
 

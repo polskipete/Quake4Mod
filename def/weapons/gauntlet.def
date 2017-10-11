@@ -195,7 +195,7 @@ model weapon_gauntlet_world
 
 entityDef damage_gauntlet
 {
-	"damage"					"50"
+	"damage"					"500"
 	"gib"						"1"
 
 	"dv_time"					"100"

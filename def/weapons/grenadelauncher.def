@@ -81,7 +81,7 @@ entityDef weapon_grenadelauncher
 	"dirOffset"					"0 0 .2"
 	
 	"inv_weapon"				"weapon_grenadelauncher"
-	"inv_start_ammo_grenadelauncher"	"100"
+	"inv_start_ammo_grenadelauncher"	"50"
 	"inv_item"					"1"
 	"inv_icon"					"gfx/guis/hud/icons/item_grenade.tga"
 	"inv_name"					"#str_107403"	
@@ -182,7 +182,7 @@ entityDef moveable_item_grenadelauncher
 model weapon_grenadelauncher_view
 {
 	mesh						models/weapons/grenadelauncher/mesh.md5mesh
-	skin						skins/weapons/strogg_rocket_launcher/nobounce
+//	skin						skins/weapons/strogg_rocket_launcher/nobounce
 
 	anim idle 					models/weapons/grenadelauncher/idle.md5anim	
 	anim idle_empty				models/weapons/grenadelauncher/idle_empty.md5anim	
@@ -311,15 +311,15 @@ entityDef damage_grenadeDirect
 entityDef damage_grenadeDirect_mp
 {
 	"inherit"					"damage_grenadeDirect"
-	"damage"					"100"
-	"knockback"					"100"
+	"damage"					"20"
+	"knockback"					"500"
 }
 
 entityDef damage_grenadeSplash 
 {
-	"damage"					"200"
+	"damage"					"15"
 	"radius"					"250"
-	"knockback"					"100"
+	"knockback"					"350"
 	"push"						"10000"
 	"gib"						"0"
 
@@ -336,5 +336,5 @@ entityDef damage_grenadeSplash_mp
 {
 	"inherit"					"damage_grenadeSplash"
 	"damage"					"5"
-	"radius"					"5"
+	"radius"					"150"
 }

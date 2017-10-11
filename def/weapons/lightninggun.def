@@ -311,7 +311,7 @@ entityDef damage_lightninggun
 entityDef damage_lightninggun_mp
 {
 	"inherit"					"damage_lightninggun"
-	"damage"					"7"
+	"damage"					"5"
 	"knockback"					"1000"
 }
 

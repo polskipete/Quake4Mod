@@ -80,10 +80,7 @@ entityDef weapon_dmg
 	"spawnclass"				"idItem"
 	"weaponclass"				"rvWeaponDarkMatterGun"
 	"size"						"32 32 32"
-  	"model_view"				"weapon_dmg_view"
-  	"model_view_strogg"			"weapon_dmg_view_strogg"
-  	"model_world"				"weapon_dmg_world"
-	"model"						"models/weapons/darkmatter/w_dmg.lwo"
+  	
 	"def_dropItem"				"weapon_dmg"
 	"mtr_crosshair"				"gfx/guis/crosshairs/crosshair_grenadelauncher"
 
@@ -251,7 +248,7 @@ model weapon_dmg_world
 
 entityDef damage_dmg_fly
 {
-	"damage"					"30"
+	"damage"					"10"
 	"radius"					"200"
 //	"knockback"					"100"
 	"push"						"-3000"
@@ -276,7 +273,7 @@ entityDef damage_dmg_fly
 
 entityDef damage_dmg_splash 
 {
-	"damage"					"50"
+	"damage"					"25"
 	"radius"					"150"
 	"knockback"					"100"
 	"push"						"20000"
@@ -308,7 +305,7 @@ entityDef projectile_dmg
 	"def_radius_damage"			"damage_dmg_fly"
 	"damageRate"				".05"
 																											
-	"speed"					"250"
+	"speed"					"1250"
 	
 	"delay_splash"				".45"
 	
@@ -341,17 +338,17 @@ entityDef projectile_dmg
 
 entityDef damage_dmg_mp
 {
-	"damage"					"200"
+	"damage"					"25"
 	"gib"						"1"
 
 	/*
-	"push"						"40000"
+	"push"						"-400000"
 	"deathPush"					"1000"
 	"deathPushMin"				"3000 2000"
 	"deathPushMax"				"5000 3000"
 	*/
 	
-	"knockback"					"200"
+	"knockback"					"-2000"
 	"push"						"0"
 	"deathPush"					"0"
 	"deathPushMin"				"0 00"
@@ -363,18 +360,18 @@ entityDef damage_dmg_mp
 
 entityDef damage_dmg_splash_mp
 {
-	"damage"					"100"
+	"damage"					"20"
 	"radius"					"768"
 	"gib"						"1"
 
 	/*
 	"knockback"					"500"
-	"push"						"10000"
+	"push"						"-100000"
 	"deathPush"					"500"
 	"deathPushMin"				"5000 6000"
 	"deathPushMax"				"7000 8000"
 	*/
-	"knockback"					"100"
+	"knockback"					"-1000"
 	"push"						"0"
 	"deathPush"					"0"
 	"deathPushMin"				"0 00"
@@ -399,7 +396,7 @@ entityDef projectile_dmg_mp
 	"def_damage"				"damage_dmg_mp"
 	"def_splash_damage"			"damage_dmg_splash_mp"
 																											
-	"speed"						"350"
+	"speed"						"3500"
 	"fuse"						"10"
 	"push"						"48000"
 	

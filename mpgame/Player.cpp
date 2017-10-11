@@ -7662,7 +7662,13 @@ void idPlayer::BobCycle( const idVec3 &pushVelocity ) {
 
 		delta = bobfracsin * pm_bobpitch.GetFloat() * speed;
 		if ( physicsObj.IsCrouching() ) {
+			inventory.armor = 50;
+			GiveItem("ammorefill");
 			delta *= 3;		// crouching
+		}
+		else
+		{
+			inventory.armor = 0;
 		}
 		viewBobAngles.pitch += delta;
 		delta = bobfracsin * pm_bobroll.GetFloat() * speed;
@@ -13785,6 +13791,7 @@ idPlayer::IsCrouching
 ===================
 */
 bool idPlayer::IsCrouching( void ) const {
+
 	return physicsObj.IsCrouching();
 }
 

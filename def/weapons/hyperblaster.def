@@ -61,10 +61,7 @@ entityDef weapon_hyperblaster
 	"spawnclass"				"idItem"
 	"weaponclass"				"rvWeaponHyperblaster"
 	"size"						"32 32 32"
-  	"model_view"				"weapon_hyperblaster_view"
-  	"model_view_strogg"			"weapon_hyperblaster_view_strogg"
-  	"model_world"				"weapon_hyperblaster_world"
-	"model"						"models/weapons/hyperblaster/w_hb.lwo"
+  	
 	"def_dropItem"				"weapon_hyperblaster"
 	"def_projectile"			"projectile_hyperblaster"
 
@@ -78,7 +75,7 @@ entityDef weapon_hyperblaster
 	"crosshairOffsetX"			"0"
 	"crosshairOffsetY"			"0"
 
-	"fireRate"					".08"
+	"fireRate"					"1"
 	"spread"					"2"
 	"spread_mp"					"0"
 
@@ -168,7 +165,7 @@ entityDef weapon_hyperblaster_mp
 	// played when you touch a weapon you can't acquire, i.e. weaponStay in MP
 	"snd_noAcquire"			"pickup_weaponstay"
 
-	"fireRate"					".07"
+	"fireRate"					"1"
 }
 
 entityDef moveable_item_hyperblaster
