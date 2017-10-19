@@ -1,0 +1,16 @@
+Unzip and drag folder to Quake 4 main folder(Everyplayer must do this manually)
+Load mod and go into multiplayer
+Pick LAN server, connect by host IP if not shown on LAN server select
+To host one must turn off pure servers and punkbuster.
+Turn on Buy Option
+Anything but tonrey works
+Launch Game
+Set keybind to buymenu, 'B' works
+Shotgun: Jedi Load Out/ Lighting: Sith Loadout, in buy menu
+Crouch: defensive ability/recharge ammo
+Force Speed: Walk keybind("shift by default")
+Force Leap: Jump keybind("space by default")
+Enjoy!
+ 
+"C:\Program Files (x86)\Steam\steamapps\common\Quake 4\Quake4.exe" +disconnect +seta com_allowconsole 1 +set fs_game JedivSith
+
